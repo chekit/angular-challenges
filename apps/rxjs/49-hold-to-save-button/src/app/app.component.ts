@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SaveRequestComponent } from './components/save-request/save-request.component';
+import { HoldToSaveButtonComponent } from './components/hold-to-save-button/hold-to-save-buttoncomponent';
 
 @Component({
   standalone: true,
-  imports: [SaveRequestComponent],
+  imports: [HoldToSaveButtonComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
 })

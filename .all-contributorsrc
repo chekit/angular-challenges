@@ -29,6 +29,10 @@
     "translation-ru": {
       "symbol": "🇷🇺",
       "description": "Translate in Russian"
+    },
+    "translation-ch": {
+      "symbol": "🇨🇳",
+      "description": "Translate in Chinese"
     }
   },
   "contributors": [
@@ -105,6 +109,25 @@
       "name": "Timothy Alcaide",
       "avatar_url": "https://avatars.githubusercontent.com/u/17033036?v=4",
       "profile": "https://twitter.com/alcaidio",
+      "contributions": [
+        "challenge"
+      ]
+    },
+    {
+      "login": "LMFinney",
+      "name": "Lance Finney",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6683747?v=4",
+      "profile": "https://github.com/LMFinney",
+      "contributions": [
+        "doc",
+        "challenge"
+      ]
+    },
+    {
+      "login": "tsironis13",
+      "name": "Tsironis Ioannis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7561447?v=4",
+      "profile": "https://github.com/tsironis13",
       "contributions": [
         "challenge"
       ]
@@ -255,6 +278,88 @@
       "name": "Vimulatus",
       "avatar_url": "https://avatars.githubusercontent.com/u/63696128?v=4",
       "profile": "https://github.com/vimulatus",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "alannelucq",
+      "name": "Arthur LANNELUCQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44091408?v=4",
+      "profile": "https://github.com/alannelucq",
+      "contributions": [
+        "translation-fr"
+      ]
+    },
+    {
+      "login": "fixedmichal",
+      "name": "fixed_michal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26270192?v=4",
+      "profile": "https://github.com/fixedmichal",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "Tenessy",
+      "name": "Tenessy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65855673?v=4",
+      "profile": "https://github.com/Tenessy",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "EnochGao",
+      "name": "Enoch Gao",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41459067?v=4",
+      "profile": "https://enochgao.github.io/",
+      "contributions": [
+        "doc",
+        "translation-ch"
+      ]
+    },
+    {
+      "login": "fpalmab",
+      "name": "Francisco Palma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7729812?v=4",
+      "profile": "https://github.com/fpalmab",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "michalgrzegorczyk-dev",
+      "name": "Michał Grzegorczyk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47832176?v=4",
+      "profile": "https://github.com/michalgrzegorczyk-dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "tamim36",
+      "name": "Tamim Arefin Anik",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42251521?v=4",
+      "profile": "https://github.com/tamim36",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "WhoisBsa",
+      "name": "Matheus B.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36895235?v=4",
+      "profile": "https://github.com/WhoisBsa",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "StefH",
+      "name": "Stef Heyenrath",
+      "avatar_url": "https://avatars.githubusercontent.com/u/249938?v=4",
+      "profile": "https://sourcerer.io/stefh",
       "contributions": [
         "doc"
       ]

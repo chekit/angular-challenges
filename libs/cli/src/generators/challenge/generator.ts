@@ -6,7 +6,6 @@ import {
 import { formatFiles, generateFiles, Tree, updateJson } from '@nx/devkit';
 import { Linter } from '@nx/eslint';
 import { join } from 'path';
-import { getProjectDir } from '../../utils/normalize';
 import { langMapper } from './files/lang-mapper';
 import { Schema } from './schema';
 
@@ -38,22 +37,22 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
   const challengeNumberJson = JSON.parse(
     tree.read(challengeNumberPath).toString(),
   );
-  const challengeNumber = challengeNumberJson.total + 1;
+  const challengeNumber =
+    options.challengeNumber ?? challengeNumberJson.total + 1;
+
   const difficulty = options.challengeDifficulty;
 
   const name = options.title.toLowerCase().split(' ').join('-');
 
   const order = challengeNumberJson[difficulty] + 1;
 
-  const { appProjectName, appDirectory } = getProjectDir(
-    name,
-    `apps/${options.category}`,
-  );
+  const appProjectName = `${options.category}-${name}`;
+  const appDirectory = `apps/${options.category}/${challengeNumber}-${name}`;
 
   await applicationGenerator(tree, {
     ...options,
     name: `${options.category}-${name}`,
-    directory: `apps/${options.category}/${challengeNumber}-${name}`,
+    directory: appDirectory,
     style: 'scss',
     routing: false,
     inlineStyle: true,
@@ -65,7 +64,6 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     addTailwind: true,
     standalone: true,
     skipTests: true,
-    projectNameAndRootFormat: 'as-provided',
   });
 
   generateFiles(tree, join(__dirname, 'files', 'app'), appDirectory, {
@@ -81,6 +79,21 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     challengeNumber,
     category: options.category,
   });
+
+  const authorFile = tree.read(
+    `./docs/src/content/authors/${options.author}.json`,
+  );
+  if (!authorFile) {
+    generateFiles(
+      tree,
+      join(__dirname, 'files', 'author'),
+      `./docs/src/content/authors/`,
+      {
+        tmpl: '',
+        authorName: options.author,
+      },
+    );
+  }
 
   generateFiles(
     tree,
@@ -145,18 +158,20 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     );
   }
 
-  const previousChallengeFilePath = findPreviousChallengeFilePath(
-    tree,
-    `./docs/src/content/docs/challenges`,
-    String(challengeNumber - 1),
-  );
+  if (!options.challengeNumber) {
+    const previousChallengeFilePath = findPreviousChallengeFilePath(
+      tree,
+      `./docs/src/content/docs/challenges`,
+      String(Number(challengeNumber) - 1),
+    );
 
-  const previousChallenge = tree.read(previousChallengeFilePath).toString();
+    const previousChallenge = tree.read(previousChallengeFilePath).toString();
 
-  tree.write(
-    previousChallengeFilePath,
-    previousChallenge.replace(`badge: New`, ``),
-  );
+    tree.write(
+      previousChallengeFilePath,
+      previousChallenge.replace(`badge: New`, ``),
+    );
+  }
 
   updateJson(tree, challengeNumberPath, (json) => {
     json.total += 1;

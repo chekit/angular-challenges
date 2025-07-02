@@ -4,14 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { randText } from '@ngneat/falso';
 
 @Component({
-  standalone: true,
   imports: [CommonModule],
   selector: 'app-root',
   template: `
-    <div *ngFor="let todo of todos">
+    @for (todo of todos; track todo.id) {
       {{ todo.title }}
       <button (click)="update(todo)">Update</button>
-    </div>
+    }
   `,
   styles: [],
 })

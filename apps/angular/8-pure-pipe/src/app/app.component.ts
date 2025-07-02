@@ -1,14 +1,11 @@
-import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [NgFor],
   selector: 'app-root',
   template: `
-    <div *ngFor="let person of persons; let index = index">
-      {{ heavyComputation(person, index) }}
-    </div>
+    @for (person of persons; track person) {
+      {{ heavyComputation(person, $index) }}
+    }
   `,
 })
 export class AppComponent {

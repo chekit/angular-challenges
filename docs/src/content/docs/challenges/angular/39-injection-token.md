@@ -1,12 +1,17 @@
 ---
 title: 🟠 InjectionToken
-description: Challenge 39 is about learning the power of dependancy injection
+description: Challenge 39 is about learning the power of dependency injection
 author: thomas-laforge
 contributors:
   - tomalaforge
   - jdegand
+  - LMFinney
 challengeNumber: 39
 command: angular-injection-token
+videoLinks:
+  - link: https://www.youtube.com/watch?v=ntggdQycFyc
+    alt: Injection Token by Arthur Lannelucq
+    flag: FR
 sidebar:
   order: 118
 ---

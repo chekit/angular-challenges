@@ -1,21 +1,8 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { CommonStore } from '../common/common.store';
 import { Teacher } from '../model/teacher.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TeacherStore {
-  public teachers = signal<Teacher[]>([]);
-
-  addAll(teachers: Teacher[]) {
-    this.teachers.set(teachers);
-  }
-
-  addOne(teacher: Teacher) {
-    this.teachers.set([...this.teachers(), teacher]);
-  }
-
-  deleteOne(id: number) {
-    this.teachers.set(this.teachers().filter((t) => t.id !== id));
-  }
-}
+export class TeacherStore extends CommonStore<Teacher> {}

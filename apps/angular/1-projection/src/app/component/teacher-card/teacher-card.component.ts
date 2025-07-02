@@ -1,34 +1,53 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FakeHttpService } from '../../data-access/fake-http.service';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonStore } from '../../common/common.store';
+import { CommonData } from '../../common/commonData.directive';
+import { randTeacher } from '../../data-access/fake-http.service';
 import { TeacherStore } from '../../data-access/teacher.store';
-import { CardType } from '../../model/card.model';
+import { Teacher } from '../../model/teacher.model';
 import { CardComponent } from '../../ui/card/card.component';
+import { ListItemComponent } from '../../ui/list-item/list-item.component';
 
 @Component({
   selector: 'app-teacher-card',
+  standalone: true,
   template: `
-    <app-card
-      [list]="teachers()"
-      [type]="cardType"
-      customClass="bg-light-red"></app-card>
+    <app-card [list]="data$()">
+      <img
+        ngSrc="assets/img/teacher.png"
+        width="200"
+        height="200"
+        priority
+        cover />
+      <button
+        class="rounded-sm border border-blue-500 bg-blue-300 p-2"
+        (click)="addItem()"
+        addButton>
+        Add
+      </button>
+      <ng-template #listTemplate let-item>
+        <app-list-item [name]="item.firstName">
+          <button (click)="deleteItem(item.id)" deleteButton>
+            <img class="h-5" src="assets/svg/trash.svg" />
+          </button>
+        </app-list-item>
+      </ng-template>
+    </app-card>
   `,
-  styles: [
-    `
-      ::ng-deep .bg-light-red {
-        background-color: rgba(250, 0, 0, 0.1);
-      }
-    `,
-  ],
-  imports: [CardComponent],
+  providers: [{ provide: CommonStore, useClass: TeacherStore }],
+  imports: [CardComponent, NgOptimizedImage, ListItemComponent],
 })
-export class TeacherCardComponent implements OnInit {
-  private http = inject(FakeHttpService);
-  private store = inject(TeacherStore);
-
-  teachers = this.store.teachers;
-  cardType = CardType.TEACHER;
+export class TeacherCardComponent
+  extends CommonData<Teacher>
+  implements OnInit
+{
+  override addItem(): void {
+    this.store.addItem(randTeacher());
+  }
 
   ngOnInit(): void {
-    this.http.fetchTeachers$.subscribe((t) => this.store.addAll(t));
+    this.fakeHttpService.fetchTeachers$.subscribe((t) =>
+      this.store.setItems(t),
+    );
   }
 }

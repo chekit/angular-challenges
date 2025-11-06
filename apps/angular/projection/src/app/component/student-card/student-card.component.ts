@@ -1,4 +1,3 @@
-import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { StudentStore, randStudent } from '../../data-access';
 import { Student } from '../../model';
@@ -30,7 +29,7 @@ import { CardComponent, ListItemComponent } from '../../ui';
     },
   ],
   standalone: true,
-  imports: [CardComponent, AsyncPipe, ListItemComponent],
+  imports: [CardComponent, ListItemComponent],
 })
 export class StudentCardComponent
   extends DataCardComponentBase<Student>

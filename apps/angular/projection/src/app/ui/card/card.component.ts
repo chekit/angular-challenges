@@ -1,4 +1,4 @@
-import { NgFor, NgStyle, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,7 +7,6 @@ import {
   input,
   output,
 } from '@angular/core';
-import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-card',
@@ -37,7 +36,7 @@ import { ListItemComponent } from '../list-item/list-item.component';
     class: 'flex w-fit flex-col gap-3 rounded-md border-2 border-black p-4',
   },
   standalone: true,
-  imports: [NgFor, ListItemComponent, NgStyle, NgTemplateOutlet],
+  imports: [NgTemplateOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {

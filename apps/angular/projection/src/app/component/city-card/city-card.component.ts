@@ -1,4 +1,3 @@
-import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CityStore, randomCity } from '../../data-access';
 import { City } from '../../model';
@@ -30,7 +29,7 @@ import { CardComponent, ListItemComponent } from '../../ui';
       useClass: CityStore,
     },
   ],
-  imports: [CardComponent, AsyncPipe, ListItemComponent],
+  imports: [CardComponent, ListItemComponent],
 })
 export class CityCardComponent
   extends DataCardComponentBase<City>

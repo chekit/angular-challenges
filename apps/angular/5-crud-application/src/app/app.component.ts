@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { randText } from '@ngneat/falso';
+import { ToDo } from './models/todo';
 
 @Component({
   imports: [],
@@ -16,19 +17,19 @@ import { randText } from '@ngneat/falso';
 export class AppComponent implements OnInit {
   private http = inject(HttpClient);
 
-  todos!: any[];
+  todos!: ToDo[];
 
   ngOnInit(): void {
     this.http
-      .get<any[]>('https://jsonplaceholder.typicode.com/todos')
+      .get<ToDo[]>('https://jsonplaceholder.typicode.com/todos')
       .subscribe((todos) => {
         this.todos = todos;
       });
   }
 
-  update(todo: any) {
+  update(todo: ToDo) {
     this.http
-      .put<any>(
+      .put<ToDo>(
         `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
         JSON.stringify({
           todo: todo.id,
@@ -42,7 +43,7 @@ export class AppComponent implements OnInit {
           },
         },
       )
-      .subscribe((todoUpdated: any) => {
+      .subscribe((todoUpdated: ToDo) => {
         this.todos[todoUpdated.id - 1] = todoUpdated;
       });
   }

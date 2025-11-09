@@ -15,6 +15,7 @@ import { TodoService } from './services/todo.service';
         <button
           class="todo__button"
           (click)="update(todo)"
+          [disabled]="todo.id === state().isUpdating"
           data-test="update-btn">
           Update
         </button>

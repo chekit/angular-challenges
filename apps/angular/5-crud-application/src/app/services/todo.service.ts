@@ -30,4 +30,10 @@ export class TodoService {
       },
     );
   }
+
+  deleteTodo(todo: ToDo): Observable<ToDo> {
+    return this.http.delete<ToDo>(
+      `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
+    );
+  }
 }

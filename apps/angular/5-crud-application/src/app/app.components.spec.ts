@@ -24,7 +24,7 @@ const TODOS_STUB = [
   },
 ];
 
-const TODO_UPDATE = { ...TODOS_STUB[1], title: 'test', completed: true };
+const TODO_UNDER_TEST = { ...TODOS_STUB[1], title: 'test', completed: true };
 
 describe('App Component', () => {
   let component: AppComponent;
@@ -38,7 +38,7 @@ describe('App Component', () => {
           provide: TodoService,
           useValue: {
             getTodoList: jest.fn().mockReturnValue(of(TODOS_STUB)),
-            updateTodo: jest.fn().mockReturnValue(of(TODO_UPDATE)),
+            updateTodo: jest.fn().mockReturnValue(of(TODO_UNDER_TEST)),
           },
         },
       ],
@@ -53,8 +53,19 @@ describe('App Component', () => {
   it('should update todo in the list', waitForAsync(() => {
     fixture.detectChanges();
 
-    component.update(TODO_UPDATE);
+    component.update(TODO_UNDER_TEST);
 
-    expect(component.todos()[TODO_UPDATE.id - 1].title).toBe(TODO_UPDATE.title);
+    expect(component.todos()[TODO_UNDER_TEST.id - 1].title).toBe(
+      TODO_UNDER_TEST.title,
+    );
   }));
+
+  it('should remove todo from the list', () => {
+    const expected = TODOS_STUB.filter(({ id }) => id !== TODO_UNDER_TEST.id);
+    fixture.detectChanges();
+
+    component.delete(TODO_UNDER_TEST);
+
+    expect(component.todos()).toEqual(expected);
+  });
 });

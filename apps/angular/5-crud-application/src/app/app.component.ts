@@ -12,13 +12,18 @@ import { TodoService } from './services/todo.service';
         <h2 class="todo__title">
           {{ todo.title }}
         </h2>
-        <button
-          class="todo__button"
-          (click)="update(todo)"
-          [disabled]="todo.id === state().isUpdating"
-          data-test="update-btn">
-          Update
-        </button>
+        <div class="manage">
+          <button class="todo__button is-secondary" (click)="delete(todo)">
+            Delete
+          </button>
+          <button
+            class="todo__button"
+            (click)="update(todo)"
+            [disabled]="todo.id === state().isUpdating"
+            data-test="update-btn">
+            Update
+          </button>
+        </div>
       </div>
     }
   `,
@@ -44,9 +49,19 @@ import { TodoService } from './services/todo.service';
 
       .todo__button {
         padding: 5px 10px;
-        border: 1px soldi #aaa;
+        border: 1px solid #aaa;
+        border-radius: 5px;
         font-weight: 600;
         cursor: pointer;
+      }
+
+      .todo__button:active {
+        box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.28);
+      }
+
+      .is-secondary {
+        background-color: white;
+        border: 1px solid #ccc;
       }
 
       .is-update {
@@ -69,6 +84,12 @@ import { TodoService } from './services/todo.service';
         color: white;
         content: 'Updating...';
       }
+
+      .manage {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
     `,
   ],
 })
@@ -89,6 +110,7 @@ export class AppComponent implements OnInit {
 
   update(todo: ToDo) {
     this.state.update((state) => ({ ...state, isUpdating: todo.id }));
+
     this.todoService
       .updateTodo(todo)
       .pipe(
@@ -102,6 +124,21 @@ export class AppComponent implements OnInit {
           todoUpdated,
           ...todos.slice(todoUpdated.id),
         ]);
+      });
+  }
+
+  delete(todo: ToDo): void {
+    this.state.update((state) => ({ ...state, isUpdating: todo.id }));
+
+    this.todoService
+      .updateTodo(todo)
+      .pipe(
+        finalize(() =>
+          this.state.update((state) => ({ ...state, isUpdating: -1 })),
+        ),
+      )
+      .subscribe((todoUpdated: ToDo) => {
+        this.todos.update((todos) => todos.filter(({ id }) => id !== todo.id));
       });
   }
 }

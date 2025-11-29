@@ -8,7 +8,6 @@ export function errorsInterceptor(
   next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> {
   const errorService = inject(GlobalErrorService);
-  console.log('<---');
 
   return next(req).pipe(
     tap(() => errorService.resetError()),

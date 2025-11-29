@@ -1,0 +1,13 @@
+<h2 class="todo-title">
+  {{ data().title }}
+</h2>
+<div class="todo-manage">
+  <button class="todo-button is-secondary" (click)="onDelete()">Delete</button>
+  <button
+    class="todo-button"
+    (click)="onUpdate()"
+    [disabled]="isBusy()"
+    data-test="update-btn">
+    Update
+  </button>
+</div>

@@ -1,33 +1,23 @@
+@if (loading()) {
+  <app-loader />
+}
+
 @if (error()) {
   <div class="error">
     <app-error-message
       class="error__message"
       [message]="error()"
       data-test="error-message" />
-    <button
-      class="todo__button error__button"
-      (click)="reloadData()"
-      data-test="reload-button">
+    <button class="reload-btn" (click)="reloadData()" data-test="reload-button">
       Reload
     </button>
   </div>
 }
-@for (todo of todos(); track todo.id) {
-  <div class="todo" [class.is-update]="todo.id === state().isUpdating">
-    <h2 class="todo__title">
-      {{ todo.title }}
-    </h2>
-    <div class="manage">
-      <button class="todo__button is-secondary" (click)="delete(todo)">
-        Delete
-      </button>
-      <button
-        class="todo__button"
-        (click)="update(todo)"
-        [disabled]="todo.id === state().isUpdating"
-        data-test="update-btn">
-        Update
-      </button>
-    </div>
-  </div>
+
+@for (todo of todos(); track $index) {
+  <todo
+    [data]="todo"
+    [isBusy]="todo.id === state().isUpdating"
+    (delete)="delete($event)"
+    (update)="update($event)" />
 }

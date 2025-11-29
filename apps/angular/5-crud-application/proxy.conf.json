@@ -1,0 +1,8 @@
+{
+  "/todos": {
+    "target": "https://jsonplaceholder.typicode.com",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

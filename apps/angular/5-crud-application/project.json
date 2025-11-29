@@ -64,6 +64,9 @@
           "buildTarget": "angular-crud-application:build:development"
         }
       },
+      "options": {
+        "proxyConfig": "apps/angular/5-crud-application/proxy.conf.json"
+      },
       "defaultConfiguration": "development",
       "continuous": true
     },

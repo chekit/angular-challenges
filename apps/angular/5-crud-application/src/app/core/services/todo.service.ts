@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { randText } from '@ngneat/falso';
 import { Observable } from 'rxjs';
-import { ToDo } from '../models/todo';
+import { ToDo } from '../../models/todo';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +11,12 @@ export class TodoService {
   private http = inject(HttpClient);
 
   getTodoList(): Observable<ToDo[]> {
-    return this.http.get<ToDo[]>('https://jsonplaceholder.typicode.com/todos');
+    return this.http.get<ToDo[]>('/todos');
   }
 
   updateTodo(todo: ToDo): Observable<ToDo> {
     return this.http.put<ToDo>(
-      `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
+      `/todos/${todo.id}`,
       JSON.stringify({
         todo: todo.id,
         title: randText(),
@@ -32,8 +32,6 @@ export class TodoService {
   }
 
   deleteTodo(todo: ToDo): Observable<ToDo> {
-    return this.http.delete<ToDo>(
-      `https://jsonplaceholder.typicode.com/todos/${todo.id}`,
-    );
+    return this.http.delete<ToDo>(`/todos/${todo.id}`);
   }
 }

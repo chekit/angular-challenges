@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { AppComponent } from './app.component';
 import { GlobalErrorService } from './core/services/error.service';
 import { TodoService } from './core/services/todo.service';
+import { AppStore } from './core/store/app.store';
 
 const TODOS_STUB = [
   {
@@ -43,6 +44,7 @@ describe('App Component', () => {
             updateTodo: jest.fn().mockReturnValue(of(TODO_UNDER_TEST)),
           },
         },
+        AppStore,
       ],
     });
   }));

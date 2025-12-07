@@ -1,10 +1,11 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { finalize } from 'rxjs';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { GlobalErrorService } from './core/services/error.service';
 import { TodoService } from './core/services/todo.service';
+import { AppStore } from './core/store/app.store';
 import { ToDo } from './models/todo';
 
 @Component({
@@ -16,75 +17,100 @@ import { ToDo } from './models/todo';
 export class AppComponent implements OnInit {
   private todoService = inject(TodoService);
   private errorService = inject(GlobalErrorService);
+  private appStore = inject(AppStore);
 
   error = this.errorService.error;
-  todos = signal<ToDo[]>([]);
 
-  protected state = signal({
-    isUpdating: -1,
-    isLoading: true,
-  });
-  loading = computed(() => this.state().isLoading);
+  isUpdating = this.appStore.selectSignal((state) => state.isUpdating);
+  isLoading = this.appStore.selectSignal((state) => state.isLoading);
+  todos = this.appStore.selectSignal((state) => state.data);
 
   ngOnInit(): void {
     this.todoService
       .getTodoList()
       .pipe(
         finalize(() => {
-          this.state.update((state) => ({ ...state, isLoading: false }));
+          this.appStore.setState((state) => ({ ...state, isLoading: false }));
         }),
       )
       .subscribe((todos) => {
-        this.todos.set(todos);
+        this.appStore.setState((state) => ({ ...state, data: todos }));
       });
   }
 
   update(todo: ToDo) {
-    this.state.update((state) => ({ ...state, isUpdating: todo.id }));
+    this.appStore.setState((state) => ({
+      ...state,
+      isUpdating: todo.id,
+    }));
 
     this.todoService
       .updateTodo(todo)
       .pipe(
         finalize(() =>
-          this.state.update((state) => ({ ...state, isUpdating: -1 })),
+          this.appStore.setState((state) => ({
+            ...state,
+            isUpdating: -1,
+          })),
         ),
       )
       .subscribe((todoUpdated: ToDo) => {
-        this.todos.update((todos) => [
-          ...todos.slice(0, todoUpdated.id - 1),
-          todoUpdated,
-          ...todos.slice(todoUpdated.id),
-        ]);
+        this.appStore.setState((state) => ({
+          ...state,
+          data: [
+            ...state.data.slice(0, todoUpdated.id - 1),
+            todoUpdated,
+            ...state.data.slice(todoUpdated.id),
+          ],
+        }));
       });
   }
 
   delete(todo: ToDo): void {
-    this.state.update((state) => ({ ...state, isUpdating: todo.id }));
+    this.appStore.setState((state) => ({
+      ...state,
+      isUpdating: todo.id,
+    }));
 
     this.todoService
       .updateTodo(todo)
       .pipe(
         finalize(() =>
-          this.state.update((state) => ({ ...state, isUpdating: -1 })),
+          this.appStore.setState((state) => ({
+            ...state,
+            isUpdating: -1,
+          })),
         ),
       )
-      .subscribe((todoUpdated: ToDo) => {
-        this.todos.update((todos) => todos.filter(({ id }) => id !== todo.id));
+      .subscribe(() => {
+        this.appStore.setState((state) => ({
+          ...state,
+          data: state.data.filter(({ id }) => id !== todo.id),
+        }));
       });
   }
 
   reloadData() {
-    this.state.update((state) => ({ ...state, isLoading: true }));
+    this.appStore.setState((state) => ({
+      ...state,
+      isLoading: true,
+    }));
 
     this.todoService
       .getTodoList()
       .pipe(
         finalize(() => {
-          this.state.update((state) => ({ ...state, isLoading: false }));
+          this.appStore.setState((state) => ({
+            ...state,
+            isLoading: false,
+          }));
         }),
       )
       .subscribe((todos) => {
-        this.todos.set(todos);
+        this.appStore.setState((state) => ({
+          ...state,
+          data: todos,
+        }));
       });
   }
 }

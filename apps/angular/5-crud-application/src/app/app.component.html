@@ -1,4 +1,4 @@
-@if (loading()) {
+@if (isLoading()) {
   <app-loader />
 }
 
@@ -14,10 +14,10 @@
   </div>
 }
 
-@for (todo of todos(); track $index) {
+@for (todo of todos(); track todo.id) {
   <todo
     [data]="todo"
-    [isBusy]="todo.id === state().isUpdating"
+    [isBusy]="todo.id === isUpdating()"
     (delete)="delete($event)"
     (update)="update($event)" />
 }

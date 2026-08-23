@@ -15,12 +15,12 @@
         "main": "apps/angular/1-projection/src/main.ts",
         "polyfills": ["apps/angular/1-projection/src/polyfills.ts"],
         "tsConfig": "apps/angular/1-projection/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/1-projection/src/favicon.ico",
           "apps/angular/1-projection/src/assets"
         ],
-        "styles": ["apps/angular/1-projection/src/styles.scss"],
+        "styles": ["apps/angular/1-projection/src/styles.css"],
         "scripts": [],
         "allowedCommonJsDependencies": ["seedrandom"]
       },

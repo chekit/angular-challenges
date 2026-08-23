@@ -19,7 +19,7 @@
           "apps/angular/32-change-detection-bug/src/favicon.ico",
           "apps/angular/32-change-detection-bug/src/assets"
         ],
-        "styles": ["apps/angular/32-change-detection-bug/src/styles.scss"],
+        "styles": ["apps/angular/32-change-detection-bug/src/styles.css"],
         "scripts": []
       },
       "configurations": {

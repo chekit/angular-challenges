@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './ui/nav.component';
 
 @Component({
   imports: [RouterOutlet, NavComponent],
   selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <div class="h-screen bg-gray-50">
       <app-nav

@@ -19,7 +19,7 @@
           "apps/testing/24-harness-creation/src/favicon.ico",
           "apps/testing/24-harness-creation/src/assets"
         ],
-        "styles": ["apps/testing/24-harness-creation/src/styles.scss"],
+        "styles": ["apps/testing/24-harness-creation/src/styles.css"],
         "scripts": []
       },
       "configurations": {

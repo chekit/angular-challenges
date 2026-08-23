@@ -1,4 +1,9 @@
-import { Component, HostListener, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +15,7 @@ import { Component, HostListener, signal } from '@angular/core';
       <button (click)="goToTop()">Top</button>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [
     `
       :host {
@@ -34,7 +40,7 @@ export class AppComponent {
 
   public displayButton = signal(false);
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll() {
     const pos = window.scrollY;
     this.displayButton.set(pos > 50);

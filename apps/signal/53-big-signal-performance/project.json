@@ -15,12 +15,12 @@
         "browser": "apps/signal/53-big-signal-performance/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/signal/53-big-signal-performance/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/signal/53-big-signal-performance/src/favicon.ico",
           "apps/signal/53-big-signal-performance/src/assets"
         ],
-        "styles": ["apps/signal/53-big-signal-performance/src/styles.scss"],
+        "styles": ["apps/signal/53-big-signal-performance/src/styles.css"],
         "scripts": []
       },
       "configurations": {

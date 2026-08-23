@@ -1,0 +1,1 @@
+export const DECOUPLING_CORE = 'DECOUPLING_CORE';

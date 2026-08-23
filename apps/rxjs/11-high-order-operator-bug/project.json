@@ -15,12 +15,12 @@
         "main": "apps/rxjs/11-high-order-operator-bug/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/rxjs/11-high-order-operator-bug/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/rxjs/11-high-order-operator-bug/src/favicon.ico",
           "apps/rxjs/11-high-order-operator-bug/src/assets"
         ],
-        "styles": ["apps/rxjs/11-high-order-operator-bug/src/styles.scss"],
+        "styles": ["apps/rxjs/11-high-order-operator-bug/src/styles.css"],
         "scripts": [],
         "allowedCommonJsDependencies": ["seedrandom"]
       },

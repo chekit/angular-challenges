@@ -21,7 +21,7 @@
         ],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/performance/37-optimize-big-list/src/styles.scss"
+          "apps/performance/37-optimize-big-list/src/styles.css"
         ],
         "scripts": [],
         "allowedCommonJsDependencies": ["seedrandom"]

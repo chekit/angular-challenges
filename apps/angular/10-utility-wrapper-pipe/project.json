@@ -15,12 +15,12 @@
         "main": "apps/angular/10-utility-wrapper-pipe/src/main.ts",
         "polyfills": "apps/angular/10-utility-wrapper-pipe/src/polyfills.ts",
         "tsConfig": "apps/angular/10-utility-wrapper-pipe/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/10-utility-wrapper-pipe/src/favicon.ico",
           "apps/angular/10-utility-wrapper-pipe/src/assets"
         ],
-        "styles": ["apps/angular/10-utility-wrapper-pipe/src/styles.scss"],
+        "styles": ["apps/angular/10-utility-wrapper-pipe/src/styles.css"],
         "scripts": []
       },
       "configurations": {

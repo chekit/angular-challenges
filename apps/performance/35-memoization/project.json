@@ -20,7 +20,7 @@
           "apps/performance/35-memoization/src/assets"
         ],
         "styles": [
-          "apps/performance/35-memoization/src/styles.scss",
+          "apps/performance/35-memoization/src/styles.css",
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
         ],
         "scripts": [],

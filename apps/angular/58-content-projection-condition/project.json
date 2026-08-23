@@ -15,7 +15,7 @@
         "browser": "apps/angular/58-content-projection-condition/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/58-content-projection-condition/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
@@ -23,7 +23,7 @@
           }
         ],
         "styles": [
-          "apps/angular/58-content-projection-condition/src/styles.scss"
+          "apps/angular/58-content-projection-condition/src/styles.css"
         ],
         "scripts": []
       },

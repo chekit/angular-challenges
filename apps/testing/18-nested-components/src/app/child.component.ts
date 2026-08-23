@@ -21,6 +21,7 @@ export class InputComponent {
 }
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'result',
   template: `
     <p>Title is {{ title() }}</p>
@@ -53,7 +54,7 @@ export class ErrorComponent {}
 
 @Component({
   selector: 'app-child',
-  imports: [],
+  imports: [ErrorComponent, InputComponent, ResultComponent, ButtonComponent],
   template: `
     <app-input #input />
     <result [title]="input.title.value" />

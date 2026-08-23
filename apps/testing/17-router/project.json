@@ -15,12 +15,12 @@
         "main": "apps/testing/17-router/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/testing/17-router/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/testing/17-router/src/favicon.ico",
           "apps/testing/17-router/src/assets"
         ],
-        "styles": ["apps/testing/17-router/src/styles.scss"],
+        "styles": ["apps/testing/17-router/src/styles.css"],
         "scripts": []
       },
       "configurations": {

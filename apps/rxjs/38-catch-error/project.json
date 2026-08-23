@@ -19,7 +19,7 @@
           "apps/rxjs/38-catch-error/src/favicon.ico",
           "apps/rxjs/38-catch-error/src/assets"
         ],
-        "styles": ["apps/rxjs/38-catch-error/src/styles.scss"],
+        "styles": ["apps/rxjs/38-catch-error/src/styles.css"],
         "scripts": []
       },
       "configurations": {

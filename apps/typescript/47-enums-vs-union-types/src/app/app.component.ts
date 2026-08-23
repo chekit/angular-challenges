@@ -1,4 +1,9 @@
-import { Component, computed, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 
 enum Difficulty {
   EASY = 'easy',
@@ -38,7 +43,10 @@ enum Direction {
       <p>{{ directionLabel() }}</p>
     </section>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: `
+    @reference "tailwindcss";
+
     section {
       @apply mx-auto my-5 flex w-fit flex-col items-center gap-2;
 

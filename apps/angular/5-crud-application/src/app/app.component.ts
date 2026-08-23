@@ -1,4 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { finalize } from 'rxjs';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -13,6 +18,14 @@ import { ToDo } from './models/todo';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  template: `
+    @for (todo of todos; track todo.id) {
+      {{ todo.title }}
+      <button (click)="update(todo)">Update</button>
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styles: [],
 })
 export class AppComponent implements OnInit {
   private todoService = inject(TodoService);

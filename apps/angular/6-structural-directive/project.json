@@ -15,12 +15,12 @@
         "main": "apps/angular/6-structural-directive/src/main.ts",
         "polyfills": "apps/angular/6-structural-directive/src/polyfills.ts",
         "tsConfig": "apps/angular/6-structural-directive/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/6-structural-directive/src/favicon.ico",
           "apps/angular/6-structural-directive/src/assets"
         ],
-        "styles": ["apps/angular/6-structural-directive/src/styles.scss"],
+        "styles": ["apps/angular/6-structural-directive/src/styles.css"],
         "scripts": []
       },
       "configurations": {

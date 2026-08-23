@@ -15,12 +15,12 @@
         "main": "apps/angular/4-typed-context-outlet/src/main.ts",
         "polyfills": "apps/angular/4-typed-context-outlet/src/polyfills.ts",
         "tsConfig": "apps/angular/4-typed-context-outlet/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/4-typed-context-outlet/src/favicon.ico",
           "apps/angular/4-typed-context-outlet/src/assets"
         ],
-        "styles": ["apps/angular/4-typed-context-outlet/src/styles.scss"],
+        "styles": ["apps/angular/4-typed-context-outlet/src/styles.css"],
         "scripts": []
       },
       "configurations": {

@@ -1,8 +1,9 @@
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import {
-  UserComponent,
   type User,
+  UserComponent,
 } from '@angular-challenges/static-dynamic-import/users';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -13,6 +14,7 @@ import { RouterOutlet } from '@angular/router';
     <sdi-user [user]="author" />
     <router-outlet />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: 'flex flex-col',
   },

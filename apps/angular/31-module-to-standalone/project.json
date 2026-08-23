@@ -19,7 +19,7 @@
           "apps/angular/31-module-to-standalone/src/favicon.ico",
           "apps/angular/31-module-to-standalone/src/assets"
         ],
-        "styles": ["apps/angular/31-module-to-standalone/src/styles.scss"],
+        "styles": ["apps/angular/31-module-to-standalone/src/styles.css"],
         "scripts": []
       },
       "configurations": {

@@ -15,14 +15,14 @@
         "browser": "apps/signal/56-forms-and-signal/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/signal/56-forms-and-signal/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/signal/56-forms-and-signal/public"
           }
         ],
-        "styles": ["apps/signal/56-forms-and-signal/src/styles.scss"],
+        "styles": ["apps/signal/56-forms-and-signal/src/styles.css"],
         "scripts": []
       },
       "configurations": {

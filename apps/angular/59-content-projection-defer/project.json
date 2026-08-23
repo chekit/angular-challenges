@@ -15,14 +15,14 @@
         "browser": "apps/angular/59-content-projection-defer/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/59-content-projection-defer/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/angular/59-content-projection-defer/public"
           }
         ],
-        "styles": ["apps/angular/59-content-projection-defer/src/styles.scss"],
+        "styles": ["apps/angular/59-content-projection-defer/src/styles.css"],
         "scripts": []
       },
       "configurations": {

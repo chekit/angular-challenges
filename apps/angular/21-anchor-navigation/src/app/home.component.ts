@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavButtonComponent } from './nav-button.component';
 
 @Component({
   imports: [NavButtonComponent],
   selector: 'app-home',
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <nav-button href="/foo" class="fixed left-1/2 top-3">Foo Page</nav-button>
     <div id="top" class="h-screen bg-gray-500">

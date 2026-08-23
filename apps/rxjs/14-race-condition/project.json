@@ -15,12 +15,12 @@
         "main": "apps/rxjs/14-race-condition/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/rxjs/14-race-condition/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/rxjs/14-race-condition/src/favicon.ico",
           "apps/rxjs/14-race-condition/src/assets"
         ],
-        "styles": ["apps/rxjs/14-race-condition/src/styles.scss"],
+        "styles": ["apps/rxjs/14-race-condition/src/styles.css"],
         "scripts": []
       },
       "configurations": {

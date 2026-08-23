@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'unknown-person',
   template: `
     <div
@@ -28,6 +29,7 @@ import { Component, input } from '@angular/core';
       </div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: [`unknown-person.component.css`],
 })
 export class UnknownPersonComponent {

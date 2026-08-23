@@ -15,12 +15,12 @@
         "browser": "apps/typescript/47-enums-vs-union-types/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/typescript/47-enums-vs-union-types/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/typescript/47-enums-vs-union-types/src/favicon.ico",
           "apps/typescript/47-enums-vs-union-types/src/assets"
         ],
-        "styles": ["apps/typescript/47-enums-vs-union-types/src/styles.scss"],
+        "styles": ["apps/typescript/47-enums-vs-union-types/src/styles.css"],
         "scripts": []
       },
       "configurations": {

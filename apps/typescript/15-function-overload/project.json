@@ -15,12 +15,12 @@
         "main": "apps/typescript/15-function-overload/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/typescript/15-function-overload/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/typescript/15-function-overload/src/favicon.ico",
           "apps/typescript/15-function-overload/src/assets"
         ],
-        "styles": ["apps/typescript/15-function-overload/src/styles.scss"],
+        "styles": ["apps/typescript/15-function-overload/src/styles.css"],
         "scripts": []
       },
       "configurations": {

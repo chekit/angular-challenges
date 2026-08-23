@@ -14,14 +14,14 @@
         "browser": "apps/angular/60-async-redirect/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/60-async-redirect/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/angular/60-async-redirect/public"
           }
         ],
-        "styles": ["apps/angular/60-async-redirect/src/styles.scss"]
+        "styles": ["apps/angular/60-async-redirect/src/styles.css"]
       },
       "configurations": {
         "production": {

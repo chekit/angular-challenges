@@ -15,13 +15,13 @@
         "main": "apps/angular/16-master-dependency-injection/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/16-master-dependency-injection/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/16-master-dependency-injection/src/favicon.ico",
           "apps/angular/16-master-dependency-injection/src/assets"
         ],
         "styles": [
-          "apps/angular/16-master-dependency-injection/src/styles.scss"
+          "apps/angular/16-master-dependency-injection/src/styles.css"
         ],
         "scripts": []
       },

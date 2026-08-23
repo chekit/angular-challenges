@@ -15,12 +15,12 @@
         "browser": "apps/signal/43-signal-input/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/signal/43-signal-input/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/signal/43-signal-input/src/favicon.ico",
           "apps/signal/43-signal-input/src/assets"
         ],
-        "styles": ["apps/signal/43-signal-input/src/styles.scss"],
+        "styles": ["apps/signal/43-signal-input/src/styles.css"],
         "scripts": []
       },
       "configurations": {

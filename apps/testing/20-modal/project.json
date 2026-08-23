@@ -15,13 +15,13 @@
         "main": "apps/testing/20-modal/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/testing/20-modal/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/testing/20-modal/src/favicon.ico",
           "apps/testing/20-modal/src/assets"
         ],
         "styles": [
-          "apps/testing/20-modal/src/styles.scss",
+          "apps/testing/20-modal/src/styles.css",
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
         ],
         "scripts": []

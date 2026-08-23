@@ -15,12 +15,12 @@
         "main": "apps/angular/8-pure-pipe/src/main.ts",
         "polyfills": "apps/angular/8-pure-pipe/src/polyfills.ts",
         "tsConfig": "apps/angular/8-pure-pipe/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/8-pure-pipe/src/favicon.ico",
           "apps/angular/8-pure-pipe/src/assets"
         ],
-        "styles": ["apps/angular/8-pure-pipe/src/styles.scss"],
+        "styles": ["apps/angular/8-pure-pipe/src/styles.css"],
         "scripts": []
       },
       "configurations": {

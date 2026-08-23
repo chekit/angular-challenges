@@ -15,12 +15,12 @@
         "main": "apps/testing/19-input-output/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/testing/19-input-output/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/testing/19-input-output/src/favicon.ico",
           "apps/testing/19-input-output/src/assets"
         ],
-        "styles": ["apps/testing/19-input-output/src/styles.scss"],
+        "styles": ["apps/testing/19-input-output/src/styles.css"],
         "scripts": []
       },
       "configurations": {

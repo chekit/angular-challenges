@@ -26,8 +26,9 @@
     "@nx/eslint:lint": {
       "inputs": [
         "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/tools/eslint-rules/**/*"
+        "^default",
+        "{workspaceRoot}/tools/eslint-rules/**/*",
+        "{workspaceRoot}/eslint.config.mjs"
       ],
       "cache": true
     },
@@ -40,6 +41,10 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "@angular/build:unit-test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
@@ -49,22 +54,19 @@
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/cypress/**/*",
       "!{projectRoot}/**/*.cy.[jt]s?(x)",
       "!{projectRoot}/cypress.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s"
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/eslint.config.mjs"
     ],
     "sharedGlobals": []
-  },
-  "cli": {
-    "packageManager": "npm"
   },
   "generators": {
     "@nx/angular:application": {
       "e2eTestRunner": "none",
       "linter": "eslint",
-      "style": "scss",
+      "style": "css",
       "unitTestRunner": "none",
       "inlineStyle": "true",
       "inlineTemplate": "true",
@@ -79,7 +81,7 @@
       "buildable": "true"
     },
     "@nx/angular:component": {
-      "style": "scss",
+      "style": "css",
       "changeDetection": "OnPush",
       "inlineStyle": "true",
       "inlineTemplate": "true",
@@ -145,8 +147,7 @@
     {
       "plugin": "@nx/eslint/plugin",
       "options": {
-        "targetName": "lint",
-        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
+        "targetName": "lint"
       }
     },
     {
@@ -154,6 +155,14 @@
       "options": {
         "targetName": "test"
       }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test",
+        "testMode": "watch"
+      }
     }
-  ]
+  ],
+  "analytics": false
 }

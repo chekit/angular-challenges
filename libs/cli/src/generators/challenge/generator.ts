@@ -4,7 +4,6 @@ import {
   UnitTestRunner,
 } from '@nx/angular/generators';
 import { formatFiles, generateFiles, Tree, updateJson } from '@nx/devkit';
-import { Linter } from '@nx/eslint';
 import { join } from 'path';
 import { langMapper } from './files/lang-mapper';
 import { Schema } from './schema';
@@ -58,9 +57,9 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     inlineStyle: true,
     inlineTemplate: true,
     prefix: 'app',
-    unitTestRunner: options.addTest ? UnitTestRunner.Jest : UnitTestRunner.None,
+    unitTestRunner: UnitTestRunner.None,
     e2eTestRunner: E2eTestRunner.None,
-    linter: Linter.EsLint,
+    linter: 'eslint',
     addTailwind: true,
     skipTests: true,
   });
@@ -114,6 +113,19 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     generateFiles(tree, join(__dirname, 'files', 'test'), appDirectory, {
       tmpl: '',
     });
+    updateJson(tree, join(appDirectory, 'tsconfig.json'), (json) => {
+      const references = json.references ?? [];
+      const hasSpecReference = references.some(
+        (ref: any) => ref.path === './tsconfig.spec.json',
+      );
+
+      if (!hasSpecReference) {
+        references.push({ path: './tsconfig.spec.json' });
+      }
+
+      json.references = references;
+      return json;
+    });
   }
 
   const readme = tree.read('./README.md').toString();
@@ -152,7 +164,7 @@ export async function challengeGenerator(tree: Tree, options: Schema) {
     );
 
     tree.write(
-      `./docs/src/content/docs/${lang === 'en' ? '' : lang}/index.mdx`,
+      `./docs/src/content/docs/${lang === 'en' ? '' : `${lang}/`}index.mdx`,
       replacedLink,
     );
   }

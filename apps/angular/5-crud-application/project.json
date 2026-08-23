@@ -15,14 +15,14 @@
         "main": "apps/angular/5-crud-application/src/main.ts",
         "polyfills": "apps/angular/5-crud-application/src/polyfills.ts",
         "tsConfig": "apps/angular/5-crud-application/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/5-crud-application/src/favicon.ico",
           "apps/angular/5-crud-application/src/assets"
         ],
         "styles": [
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-          "apps/angular/5-crud-application/src/styles.scss"
+          "apps/angular/5-crud-application/src/styles.css"
         ],
         "scripts": [],
         "allowedCommonJsDependencies": ["seedrandom"]

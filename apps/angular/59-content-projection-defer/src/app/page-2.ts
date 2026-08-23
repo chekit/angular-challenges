@@ -1,9 +1,5 @@
 import { httpResource } from '@angular/common/http';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ResourceStatus,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ExpandableCard } from './expandable-card';
 
 interface Post {
@@ -22,7 +18,7 @@ interface Post {
       <div>
         @if (postResource.isLoading()) {
           Loading...
-        } @else if (postResource.status() === ResourceStatus.Error) {
+        } @else if (postResource.status() === 'error') {
           Error...
         } @else {
           @for (post of postResource.value(); track post.id) {
@@ -37,7 +33,6 @@ interface Post {
 })
 export class Page2 {
   public postResource = httpResource<Post[]>(
-    'https://jsonplaceholder.typicode.com/posts',
+    () => 'https://jsonplaceholder.typicode.com/posts',
   );
-  protected readonly ResourceStatus = ResourceStatus;
 }

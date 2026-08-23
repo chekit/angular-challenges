@@ -15,12 +15,12 @@
         "browser": "apps/angular/52-lazy-load-component/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/52-lazy-load-component/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/angular/52-lazy-load-component/src/favicon.ico",
           "apps/angular/52-lazy-load-component/src/assets"
         ],
-        "styles": ["apps/angular/52-lazy-load-component/src/styles.scss"],
+        "styles": ["apps/angular/52-lazy-load-component/src/styles.css"],
         "scripts": []
       },
       "configurations": {

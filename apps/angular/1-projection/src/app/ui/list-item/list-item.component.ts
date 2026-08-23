@@ -11,10 +11,10 @@ import { CardType } from '../../model/card.model';
 @Component({
   selector: 'app-list-item',
   template: `
-    <div class="border-grey-300 flex justify-between border px-2 py-1">
+    <div class="flex justify-between border border-gray-300 px-2 py-1">
       {{ name() }}
       <button (click)="delete(id())">
-        <img class="h-5" src="assets/svg/trash.svg" />
+        <img class="h-5" src="assets/svg/trash.svg" alt="trash" />
       </button>
     </div>
   `,

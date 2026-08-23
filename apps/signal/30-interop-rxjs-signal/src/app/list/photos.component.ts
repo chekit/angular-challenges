@@ -1,5 +1,10 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -39,6 +44,7 @@ import { PhotoStore } from './photos.store';
     </mat-form-field>
 
     @let vm = vm$ | async;
+    @if (vm) {
       <section class="flex flex-col">
         <section class="flex items-center gap-3">
           <button
@@ -62,11 +68,7 @@ import { PhotoStore } from './photos.store';
         }
         @if (vm.photos && vm.photos.length > 0) {
           <ul class="flex flex-wrap gap-4">
-            @for (
-              photo of vm.photos;
-              track photo.id;
-              let i = $index
-            ) {
+            @for (photo of vm.photos; track photo.id; let i = $index) {
               <li>
                 <a routerLink="detail" [queryParams]="{ photo: encode(photo) }">
                   <img
@@ -84,8 +86,10 @@ import { PhotoStore } from './photos.store';
           {{ vm.error }}
         </footer>
       </section>
+    }
   `,
   providers: [provideComponentStore(PhotoStore)],
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: {
     class: 'p-5 block',
   },

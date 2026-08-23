@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -11,7 +16,8 @@ import { RatingControlComponent } from '../rating-control/rating-control.compone
   imports: [RatingControlComponent, ReactiveFormsModule],
   selector: 'app-feedback-form',
   templateUrl: 'feedback-form.component.html',
-  styleUrls: ['feedback-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['feedback-form.component.css'],
 })
 export class FeedbackFormComponent {
   @Output()

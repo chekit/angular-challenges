@@ -19,7 +19,7 @@
           "apps/performance/40-web-workers/src/favicon.ico",
           "apps/performance/40-web-workers/src/assets"
         ],
-        "styles": ["apps/performance/40-web-workers/src/styles.scss"],
+        "styles": ["apps/performance/40-web-workers/src/styles.css"],
         "scripts": []
       },
       "configurations": {

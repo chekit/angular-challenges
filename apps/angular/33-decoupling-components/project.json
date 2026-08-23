@@ -19,7 +19,7 @@
           "apps/angular/33-decoupling-components/src/favicon.ico",
           "apps/angular/33-decoupling-components/src/assets"
         ],
-        "styles": ["apps/angular/33-decoupling-components/src/styles.scss"],
+        "styles": ["apps/angular/33-decoupling-components/src/styles.css"],
         "scripts": []
       },
       "configurations": {

@@ -15,16 +15,14 @@
         "browser": "apps/angular/57-content-projection-default/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/angular/57-content-projection-default/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           {
             "glob": "**/*",
             "input": "apps/angular/57-content-projection-default/public"
           }
         ],
-        "styles": [
-          "apps/angular/57-content-projection-default/src/styles.scss"
-        ],
+        "styles": ["apps/angular/57-content-projection-default/src/styles.css"],
         "scripts": []
       },
       "configurations": {

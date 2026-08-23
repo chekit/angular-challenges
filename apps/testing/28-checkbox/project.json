@@ -19,7 +19,7 @@
           "apps/testing/28-checkbox/src/favicon.ico",
           "apps/testing/28-checkbox/src/assets"
         ],
-        "styles": ["apps/testing/28-checkbox/src/styles.scss"],
+        "styles": ["apps/testing/28-checkbox/src/styles.css"],
         "scripts": []
       },
       "configurations": {

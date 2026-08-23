@@ -20,7 +20,7 @@
           "apps/performance/36-ngfor-optimization/src/assets"
         ],
         "styles": [
-          "apps/performance/36-ngfor-optimization/src/styles.scss",
+          "apps/performance/36-ngfor-optimization/src/styles.css",
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
         ],
         "scripts": [],

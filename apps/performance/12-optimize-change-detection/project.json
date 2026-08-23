@@ -15,13 +15,13 @@
         "main": "apps/performance/12-optimize-change-detection/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/performance/12-optimize-change-detection/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
+        "inlineStyleLanguage": "css",
         "assets": [
           "apps/performance/12-optimize-change-detection/src/favicon.ico",
           "apps/performance/12-optimize-change-detection/src/assets"
         ],
         "styles": [
-          "apps/performance/12-optimize-change-detection/src/styles.scss"
+          "apps/performance/12-optimize-change-detection/src/styles.css"
         ],
         "scripts": []
       },

@@ -19,7 +19,7 @@
           "apps/angular/39-injection-token/src/favicon.ico",
           "apps/angular/39-injection-token/src/assets"
         ],
-        "styles": ["apps/angular/39-injection-token/src/styles.scss"],
+        "styles": ["apps/angular/39-injection-token/src/styles.css"],
         "scripts": []
       },
       "configurations": {
